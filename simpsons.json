@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name":"Homero",
+    "lastname":"Simpson",
+    "age":"44",
+    "occupation":"Inspector de seguridad",
+    "likes":"Cerveza",
+    "photo":"",
+    "other":""
+  },
+  {
+    "id": 2,
+    "name":"Marge",
+    "lastname":"Simpson",
+    "age":"42",
+    "occupation":"Ama de casa",
+    "likes":"Arte, pintura",
+    "photo":"",
+    "other":""
+  },
+  {
+    "id": 3,
+    "name":"Bart",
+    "lastname":"Simpson",
+    "age":"10",
+    "occupation":"Estudiante",
+    "likes":"Hacer travesuras",
+    "photo":"",
+    "other":""
+  },
+  {
+    "id": 4,
+    "name":"Lisa",
+    "lastname":"Simpson",
+    "age":"7",
+    "occupation":"Estudiante",
+    "likes":"Música",
+    "photo":"",
+    "other":""
+  },
+  {
+    "id": 5,
+    "name":"Maggie",
+    "lastname":"Simpson",
+    "age":"2",
+    "occupation":"Salvar a la familia",
+    "likes":"Su chupete",
+    "photo":"",
+    "other":""
+  }
+]
