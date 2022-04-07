@@ -6,8 +6,8 @@
     "age":"44",
     "occupation":"Inspector de seguridad",
     "likes":"Cerveza",
-    "photo":"",
-    "other":""
+    "photo":"https://phantom-marca.unidadeditorial.es/0509cbd44e41f4ffdb98fc8b9867bfe0/resize/1320/f/jpg/assets/multimedia/imagenes/2021/05/12/16208494355539.jpg",
+    "other":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 2,
@@ -16,8 +16,8 @@
     "age":"42",
     "occupation":"Ama de casa",
     "likes":"Arte, pintura",
-    "photo":"",
-    "other":""
+    "photo":"https://www.15minutos.com/wp-content/uploads/2020/08/Marge-Simpson.jpg",
+    "other":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 3,
@@ -26,8 +26,8 @@
     "age":"10",
     "occupation":"Estudiante",
     "likes":"Hacer travesuras",
-    "photo":"",
-    "other":""
+    "photo":"https://static.wikia.nocookie.net/lossimpson/images/6/65/Bart_Simpson.png/revision/latest?cb=20100530014756&path-prefix=es",
+    "other":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 4,
@@ -36,8 +36,8 @@
     "age":"7",
     "occupation":"Estudiante",
     "likes":"Música",
-    "photo":"",
-    "other":""
+    "photo":"https://i.pinimg.com/originals/ef/cb/e0/efcbe0c7b23aba9d3412d00fadb47eec.jpg",
+    "other":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 5,
@@ -46,7 +46,7 @@
     "age":"2",
     "occupation":"Salvar a la familia",
     "likes":"Su chupete",
-    "photo":"",
-    "other":""
+    "photo":"https://static.wikia.nocookie.net/hitlerparody/images/4/48/Maggie_simpson.jpg/revision/latest/top-crop/width/360/height/450?cb=20210129180634&path-prefix=es",
+    "other":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 ]
