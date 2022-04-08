@@ -1,0 +1,146 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My User Project CRUD",
+    "description": "My User Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "devhost": "localhost:5000",
+  "host": "test-tokbox-assistcard.herokuapp.com",
+  "tags": [
+    {
+      "name": "Personajes",
+      "description": "API for users in the system"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/simpsons": {
+      "get": {
+        "tags": [
+          "Personajes"
+        ],
+        "summary": "Devuelve toda la lista de personajes o devuelve uno de los personajes completo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "description": "Id del personaje que queremos borrar"
+          }
+        ],
+        "responses": {}
+      },
+      "post": {
+        "tags": [
+          "Personajes"
+        ],
+        "summary": "Agrega un nuevo personaje a la lista",
+        "description": "Agrega un nuevo personaje a la lista",
+        "parameters": [
+          {
+            "name": "Character",
+            "in": "body",
+            "description": "Personaje que queremos crear",
+            "schema": {
+              "$ref": "#/definitions/Character"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [
+          "Personajes"
+        ],
+        "summary": "Modifica un personaje de la lista",
+        "description": "Modifica un personaje de la lista",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Id del personaje que queremos modificar"
+          },
+          {
+            "name": "Character",
+            "in": "body",
+            "description": "Personaje que queremos crear",
+            "schema": {
+              "$ref": "#/definitions/Character"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "tags": [
+          "Personajes"
+        ],
+        "summary": "Borra a un personaje de la lista",
+        "description": "Borra a un personaje de la lista",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Id del personaje que queremos borrar"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/resetcharacterslist": {
+      "post": {
+        "tags": [
+          "Reset"
+        ],
+        "summary": "Restablece la lista original de personajes",
+        "description": "Restablece la lista original de personajes",
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "Character": {
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "occupation": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "other": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

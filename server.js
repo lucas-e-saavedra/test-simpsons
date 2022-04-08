@@ -6,11 +6,19 @@ const fs = require('fs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
+
+app.use(
+    '/api-docs',
+    swaggerUi.serve, 
+    swaggerUi.setup(swaggerDocument)
+  );
+  
 app.listen(process.env.PORT || 5000, function () {
     console.log('Example app listening on port:'+process.env.PORT || 5000);
 });
 
-var sesionDeTokBox = "";
 
 //https://test-tokbox-assistcard.herokuapp.com/
 app.get('/', function (req, res) {
@@ -19,8 +27,6 @@ app.get('/', function (req, res) {
 
 var allSimpsons = JSON.parse(fs.readFileSync('simpsons.json', 'utf8'));
 
-//http://test-tokbox-assistcard.herokuapp.com/simpsons
-//http://localhost:5000/simpsons
 app.get('/simpsons', function (req, res) {
     let responseData = null;
     if(req.query.id>0){
@@ -37,8 +43,8 @@ app.get('/simpsons', function (req, res) {
             } 
           ));
     }
-    let response = new Response(responseData, true, "Estos son los resultados");
-    res.send(response);    
+    let response = new Response(responseData, responseData!=null, responseData!=null ?"Estos son los resultados" :"No hay resultados");
+    res.send(response);
 });
 
 app.post('/simpsons', function (req, res) {
@@ -61,12 +67,25 @@ app.delete('/simpsons', function (req, res) {
     const index = allSimpsons.findIndex(object => {
         return object.id == req.query.id;
       });
-    allSimpsons.splice(index, 1);
-    let response = new Response(null, index!=-1, index!=-1 ?"Se ha eliminado correctamente" :"No se ha podido eliminar")
-    res.send(response);    
+    if(index!=-1)
+        allSimpsons.splice(index, 1);
+    
+    res.send( new Response(null, index!=-1, index!=-1 
+        ?"Se ha eliminado correctamente" :"No se ha podido eliminar"));    
 });
 
-app.put('/simpsons', function (req, res) {});
+app.put('/simpsons', function (req, res) {
+    const index = allSimpsons.findIndex(object => {
+        return object.id == req.query.id;
+    });
+    if (index!=-1) {
+        let newSimpson = Simpson.fromObject(req.body);
+        newSimpson.id = Number(req.query.id);
+        allSimpsons[index] = newSimpson;        
+    }
+    res.send( new Response(null, index!=-1, index!=-1 
+        ?"Se ha modificado correctamente" :"No se ha podido modificar"));
+});
 
 
 class Response {
