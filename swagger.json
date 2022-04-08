@@ -1,16 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0.0",
-    "title": "My User Project CRUD",
-    "description": "My User Project Application API",
-    "license": {
-      "name": "MIT",
-      "url": "https://opensource.org/licenses/MIT"
-    }
+    "version": "0.0.1",
+    "title": "Simpsons CRUD",
+    "description": "Este es un proyecto de prueba con fines didacticos"
   },
   "devhost": "localhost:5000",
-  "host": "test-tokbox-assistcard.herokuapp.com",
+  "host": "test-simpsons-assistcard.herokuapp.com",
   "tags": [
     {
       "name": "Personajes",
