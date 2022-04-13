@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
 
 var allSimpsons = JSON.parse(fs.readFileSync('simpsons.json', 'utf8'));
 
-app.get('/simpsons', function (req, res) {
+app.get('/characters', function (req, res) {
     let responseData = null;
     if(req.query.id>0){
         const index = allSimpsons.findIndex(object => {
@@ -47,7 +47,7 @@ app.get('/simpsons', function (req, res) {
     res.send(response);
 });
 
-app.post('/simpsons', function (req, res) {
+app.post('/characters', function (req, res) {
     let newSimpson = Simpson.fromObject(req.body);
     const maxId = allSimpsons.reduce(function(prev, current) {
         return (prev.id > current.id) ? prev : current
@@ -63,7 +63,7 @@ app.post('/resetcharacterslist', function (req, res) {
     res.send('Se ha restablecido la lista original');
 });
 
-app.delete('/simpsons', function (req, res) {
+app.delete('/characters', function (req, res) {
     const index = allSimpsons.findIndex(object => {
         return object.id == req.query.id;
       });
