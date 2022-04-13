@@ -74,7 +74,7 @@ app.delete('/simpsons', function (req, res) {
         ?"Se ha eliminado correctamente" :"No se ha podido eliminar"));    
 });
 
-app.put('/simpsons', function (req, res) {
+app.put('/characters', function (req, res) {
     const index = allSimpsons.findIndex(object => {
         return object.id == req.query.id;
     });

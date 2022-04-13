@@ -23,7 +23,7 @@
     "application/json"
   ],
   "paths": {
-    "/simpsons": {
+    "/characters": {
       "get": {
         "tags": [
           "Personajes"
