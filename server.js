@@ -9,6 +9,15 @@ app.use(bodyParser.json());
 const swaggerUi = require('swagger-ui-express'),
 swaggerDocument = require('./swagger.json');
 
+
+//TOKBOX
+var apiKey = "46256142";
+var apiSecret = "e34ceb15c0eca4af5bfc5e1b75f374dc913ab744";
+var OpenTok = require('opentok'),
+opentok = new OpenTok(apiKey, apiSecret);
+var sesionDeTokBox = "";
+
+
 app.use(
     '/api-docs',
     swaggerUi.serve, 
@@ -87,44 +96,6 @@ app.put('/characters', function (req, res) {
         ?"Se ha modificado correctamente" :"No se ha podido modificar"));
 });
 
-
-class Response {
-    constructor(data, result, message) {
-      this.data = data;
-      this.result = result;
-      this.message = message;
-    }
-  }
-
-class Simpson {
-    constructor(id, name, lastname, age, occupation, likes, photo, other) {
-        this.id = isNaN(id) ?0 :id,
-        this.name = name;
-        this.lastname = lastname;
-        this.age = isNaN(age) ?0 :age;
-        this.occupation = occupation;
-        this.likes = likes;
-        this.photo = photo;
-        this.other = other;
-    }
-
-    static fromObject(oneObject) {
-        return new Simpson(oneObject.id, 
-                                    oneObject.name,
-                                    oneObject.lastname, 
-                                    oneObject.age, 
-                                    oneObject.occupation, oneObject.likes, oneObject.photo, oneObject.other);
-    }
-  }
-
-
-//TOKBOX
-var apiKey = "46256142";
-var apiSecret = "e34ceb15c0eca4af5bfc5e1b75f374dc913ab744";
-var OpenTok = require('opentok'),
-opentok = new OpenTok(apiKey, apiSecret);
-var sesionDeTokBox = "";
-
 app.post('/videocall-session', function (req, res) {
     if(sesionDeTokBox.length==0){
         var sessionOptions = {mediaMode:"routed", archiveMode: "always"};
@@ -154,3 +125,34 @@ app.get('/videocall-token', function (req, res) {
     var token = opentok.generateToken(sesionDeTokBox);
     res.send(token);
 });
+
+
+
+class Response {
+    constructor(data, result, message) {
+      this.data = data;
+      this.result = result;
+      this.message = message;
+    }
+  }
+
+class Simpson {
+    constructor(id, name, lastname, age, occupation, likes, photo, other) {
+        this.id = isNaN(id) ?0 :id,
+        this.name = name;
+        this.lastname = lastname;
+        this.age = isNaN(age) ?0 :age;
+        this.occupation = occupation;
+        this.likes = likes;
+        this.photo = photo;
+        this.other = other;
+    }
+
+    static fromObject(oneObject) {
+        return new Simpson(oneObject.id, 
+                                    oneObject.name,
+                                    oneObject.lastname, 
+                                    oneObject.age, 
+                                    oneObject.occupation, oneObject.likes, oneObject.photo, oneObject.other);
+    }
+  }
