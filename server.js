@@ -9,15 +9,6 @@ app.use(bodyParser.json());
 const swaggerUi = require('swagger-ui-express'),
 swaggerDocument = require('./swagger.json');
 
-
-//TOKBOX
-var apiKey = "46256142";
-var apiSecret = "e34ceb15c0eca4af5bfc5e1b75f374dc913ab744";
-var OpenTok = require('opentok'),
-opentok = new OpenTok(apiKey, apiSecret);
-var sesionDeTokBox = "";
-
-
 app.use(
     '/api-docs',
     swaggerUi.serve, 
@@ -96,37 +87,6 @@ app.put('/characters', function (req, res) {
         ?"Se ha modificado correctamente" :"No se ha podido modificar"));
 });
 
-app.post('/videocall-session', function (req, res) {
-    if(sesionDeTokBox.length==0){
-        var sessionOptions = {mediaMode:"routed", archiveMode: "always"};
-        opentok.createSession(sessionOptions, function(err, session){
-            if(err){
-                res.send("no se pudo crear la sesion");
-            }else{
-                sesionDeTokBox = session.sessionId;
-                res.send(sesionDeTokBox);
-            }
-        });
-    } else {
-        res.send(sesionDeTokBox);
-    }
-});
-
-app.delete('/videocall-session', function (req, res) {
-    sesionDeTokBox = "";
-    res.send("se finalizo la sesion de chat");
-});
-
-app.get('/videocall-session', function (req, res) {
-    res.send(sesionDeTokBox);
-});
-
-app.get('/videocall-token', function (req, res) {
-    var token = opentok.generateToken(sesionDeTokBox);
-    res.send(token);
-});
-
-
 
 class Response {
     constructor(data, result, message) {
@@ -156,3 +116,41 @@ class Simpson {
                                     oneObject.occupation, oneObject.likes, oneObject.photo, oneObject.other);
     }
   }
+
+
+//TOKBOX
+var apiKey = "46256142";
+var apiSecret = "e34ceb15c0eca4af5bfc5e1b75f374dc913ab744";
+var OpenTok = require('opentok'),
+opentok = new OpenTok(apiKey, apiSecret);
+var sesionDeTokBox = "";
+
+app.post('/videocall-session', function (req, res) {
+    if(sesionDeTokBox.length==0){
+        var sessionOptions = {mediaMode:"routed", archiveMode: "always"};
+        opentok.createSession(sessionOptions, function(err, session){
+            if(err){
+                res.send("no se pudo crear la sesion");
+            }else{
+                sesionDeTokBox = session.sessionId;
+                res.send(sesionDeTokBox);
+            }
+        });
+    } else {
+        res.send(sesionDeTokBox);
+    }
+});
+
+app.delete('/videocall-session', function (req, res) {
+    sesionDeTokBox = "";
+    res.send("se finalizo la sesion de chat");
+});
+
+app.get('/videocall-session', function (req, res) {
+    res.send(sesionDeTokBox);
+});
+
+app.get('/videocall-token', function (req, res) {
+    var token = opentok.generateToken(sesionDeTokBox);
+    res.send(token);
+});
